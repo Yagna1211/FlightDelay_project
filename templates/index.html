@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Delay Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Flight Delay Prediction</h1>
+    </header>
+
+    <main>
+        <form action="/prediction" method="POST">
+            <label for="fno">Flight Number:
+                <input type="text" id="fno" name="flnum">
+            </label>
+
+            <label for="mo">Month:
+                <input type="text" id="mo" name="month">
+            </label>
+
+            <label for="Dmo">Day Of Month:
+                <input type="text" id="Dmo" name="dayofmonth">
+            </label>
+
+            <label for="Dmw">Day Of Week:
+                <input type="text" id="Dmw" name="dayofweek">
+            </label>
+
+            <label for="ori">Origin:</label>
+            <select name="origin" id="ori">
+                <option value="msp">MSP</option>
+                <option value="dtw">DTW</option>
+                <option value="jfk">JFK</option>
+                <option value="sea">SEA</option>
+                <option value="atl">ATL</option>
+            </select>
+
+            <label for="Des">Destination:</label>
+            <select name="destination" id="Des">
+                <option value="msp">MSP</option>
+                <option value="dtw">DTW</option>
+                <option value="jfk">JFK</option>
+                <option value="sea">SEA</option>
+                <option value="atl">ATL</option>
+            </select>
+
+            <label for="crsarr">CRS Arrival Time (Hour 0–23):
+                <input type="text" id="crsarr" name="crsarr">
+            </label>
+
+            <label for="dep15">Departed Late? (0 or 1):
+                <input type="text" id="dep15" name="dep15">
+            </label>
+
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+
+    {% if showcase %}
+    <div class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="document.querySelector('.popup').style.display='none';">&times;</span>
+            <p>{{ showcase }}</p>
+        </div>
+    </div>
+    {% endif %}
+
+</body>
+</html>

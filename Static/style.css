@@ -1,0 +1,128 @@
+/* Fonts and base colors */
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f5f3ef;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+header {
+    padding: 40px 0 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 32px;
+    color: #111;
+    letter-spacing: 1px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Form styling */
+form {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fafafa;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: #a78bfa;
+    background-color: #fff;
+    outline: none;
+}
+
+/* Button styling */
+input[type="submit"] {
+    background-color: #a78bfa;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    padding: 14px;
+    margin-top: 25px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #7e5bef;
+}
+
+/* Popup message */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(6px);
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    max-width: 400px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-content p {
+    font-size: 18px;
+    color: #222;
+}
+
+.popup-content .close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 24px;
+    color: #aaa;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.popup-content .close:hover {
+    color: #000;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
